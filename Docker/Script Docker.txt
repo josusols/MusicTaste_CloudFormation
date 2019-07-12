@@ -1,0 +1,22 @@
+====================DOCKER BUILD====================
+docker build -t mf_crud .
+docker build -t mf_file_upload .
+docker build -t mf_rekognition .
+docker build -t mf_weather_api .
+=====================DOCKER RUN=====================
+docker run -d -p 80:3000 mf_crud
+docker run -d -p 8888:3000 mf_file_upload
+docker run -d -p 8000:3000 mf_rekognition
+docker run -d -p 88:3000 mf_weather_api
+===================DOCKER FOREVER===================
+docker run --restart unless-stopped -d -p 80:3000 mf_crud
+docker run --restart unless-stopped -d -p 8888:3000 mf_file_upload
+docker run --restart unless-stopped -d -p 8000:3000 mf_rekognition
+docker run --restart unless-stopped -d -p 88:3000 mf_weather_api
+docker ps
+====================================================
+"docker run --restart unless-stopped -d -p 80:3000 mf_crud",
+"docker run --restart unless-stopped -d -p 8888:3000 mf_file_upload",
+"docker run --restart unless-stopped -d -p 8000:3000 mf_rekognition",
+"docker run --restart unless-stopped -d -p 88:3000 mf_weather_api",
+"docker ps"
